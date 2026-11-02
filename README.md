@@ -72,29 +72,25 @@ tests/test_pawpal.py .....
 5 passed
 ```
 
-The tests cover task completion, task addition, sorting by time, daily recurrence, and conflict detection.
-
-Confidence level: 4/5 stars.
+- Tests cover task completion, task addition, sorting by time, daily recurrence, and conflict detection.
 
 ## 📐 Smarter Scheduling
 
-| Feature | Method(s) | Notes |
-|---------|-----------|-------|
-| Task sorting | `Scheduler.sort_by_time()` | Sorts tasks in HH:MM time order. |
-| Filtering | `Scheduler.get_tasks()` | Filters tasks by pet name or completion status. |
-| Conflict handling | `Scheduler.find_conflicts()` | Warns when incomplete tasks have the same date and time. |
-| Recurring tasks | `Task.next_occurrence()` | Creates the next daily or weekly task when a task is completed. |
+- Task sorting: `Scheduler.sort_by_time()` sorts tasks in HH:MM time order.
+- Filtering: `Scheduler.get_tasks()` filters tasks by pet name or completion status.
+- Conflict handling: `Scheduler.find_conflicts()` warns when incomplete tasks have the same date and time.
+- Recurring tasks: `Task.next_occurrence()` creates the next daily or weekly task when a task is completed.
 
 ## 📸 Demo Walkthrough
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. Open the PawPal+ app in Streamlit.
-2. Enter the owner name, pet name, and species.
-3. Enter a task title, time, duration, priority, and frequency.
-4. Select Add task to add the task to the pet.
-5. View the time-sorted task list.
-6. Enter available minutes and select Generate schedule.
-7. View the daily plan and any conflict warnings.
+- Open the PawPal+ app in Streamlit.
+- Enter the owner name, pet name, and species.
+- Enter a task title, time, duration, priority, and frequency.
+- Select Add task to add the task to the pet.
+- View the time-sorted task list.
+- Enter available minutes and select Generate schedule.
+- View the daily plan and any conflict warnings.
 
-**Screenshot or video** *(optional)*: Not included.
+- **Screenshot or video** *(optional)*: Not included.
