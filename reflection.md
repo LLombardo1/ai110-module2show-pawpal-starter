@@ -4,13 +4,11 @@
 
 **a. Initial design**
 
-- Briefly describe your initial UML design.
-- What classes did you include, and what responsibilities did you assign to each?
+My initial design uses Owner, Pet, Task, and Scheduler classes. A user can add a pet, add a care task, and view today's schedule. Owner stores pets, Pet stores tasks, Task stores care details, and Scheduler creates the daily plan.
 
 **b. Design changes**
 
-- Did your design change during implementation?
-- If yes, describe at least one change and why you made it.
+The design changed when I added task frequency, due date, and completion status. These details were needed for recurring tasks and filtering completed tasks.
 
 ---
 
@@ -18,13 +16,11 @@
 
 **a. Constraints and priorities**
 
-- What constraints does your scheduler consider (for example: time, priority, preferences)?
-- How did you decide which constraints mattered most?
+The scheduler considers time, duration, priority, due date, and completion status. Priority and available time matter most because important tasks should fit into the day.
 
 **b. Tradeoffs**
 
-- Describe one tradeoff your scheduler makes.
-- Why is that tradeoff reasonable for this scenario?
+The scheduler will check for tasks at the exact same time instead of checking every possible overlap. This is simple and useful for a basic pet care planner.
 
 ---
 
@@ -32,13 +28,11 @@
 
 **a. How you used AI**
 
-- How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
-- What kinds of prompts or questions were most helpful?
+I used AI to create the class design, build the scheduling methods, connect the Streamlit app, and write tests. Questions about sorting tasks, recurring tasks, and test cases were helpful.
 
 **b. Judgment and verification**
 
-- Describe one moment where you did not accept an AI suggestion as-is.
-- How did you evaluate or verify what the AI suggested?
+I did not use a more complex conflict system that checks every overlapping duration. I used exact matching times because it was easier to read and matched the project requirement. I verified the result with a test and the CLI demo.
 
 ---
 
@@ -46,13 +40,11 @@
 
 **a. What you tested**
 
-- What behaviors did you test?
-- Why were these tests important?
+I tested task completion, adding a task to a pet, sorting by time, daily recurrence, and conflict detection. These tests are important because they check the main scheduler behaviors.
 
 **b. Confidence**
 
-- How confident are you that your scheduler works correctly?
-- What edge cases would you test next if you had more time?
+I am confident that the main scheduler features work because five tests pass. Next, I would test an empty task list, a weekly recurring task, and tasks that overlap but do not start at the same time.
 
 ---
 
@@ -60,12 +52,12 @@
 
 **a. What went well**
 
-- What part of this project are you most satisfied with?
+I am most satisfied with building a working scheduler and showing the plan in both the CLI demo and Streamlit app.
 
 **b. What you would improve**
 
-- If you had another iteration, what would you improve or redesign?
+In another iteration, I would let users edit and remove tasks and improve conflict detection for overlapping durations.
 
 **c. Key takeaway**
 
-- What is one important thing you learned about designing systems or working with AI on this project?
+I learned that planning classes before writing code makes the system easier to build. AI can help with ideas and code, but I need to test and review the results.

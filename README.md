@@ -47,18 +47,18 @@ pip install -r requirements.txt
 Paste a sample of your app's CLI or Streamlit output here so a reader can see what a generated plan looks like:
 
 ```
-# e.g.:
-# Daily plan for Biscuit (Golden Retriever):
-#   08:00 — Morning walk (30 min) [priority: high]
-#   09:00 — Feeding (10 min) [priority: high]
-#   ...
+Today's Schedule for Jordan:
+07:30 - Mochi: Breakfast (10 min) [high]
+08:00 - Mochi: Morning walk (30 min) [high]
+08:00 - Luna: Play time (15 min) [medium]
+Conflict: Mochi's Morning walk and Luna's Play time are both at 08:00.
 ```
 
 ## 🧪 Testing PawPal+
 
 ```bash
 # Run the full test suite:
-pytest
+python -m pytest
 
 # Run with coverage:
 pytest --cov
@@ -67,28 +67,34 @@ pytest --cov
 Sample test output:
 
 ```
-# Paste your pytest output here
+tests/test_pawpal.py .....
+
+5 passed
 ```
+
+The tests cover task completion, task addition, sorting by time, daily recurrence, and conflict detection.
+
+Confidence level: 4/5 stars.
 
 ## 📐 Smarter Scheduling
 
-> Fill in once you've implemented scheduling logic.
-
 | Feature | Method(s) | Notes |
 |---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
+| Task sorting | `Scheduler.sort_by_time()` | Sorts tasks in HH:MM time order. |
+| Filtering | `Scheduler.get_tasks()` | Filters tasks by pet name or completion status. |
+| Conflict handling | `Scheduler.find_conflicts()` | Warns when incomplete tasks have the same date and time. |
+| Recurring tasks | `Task.next_occurrence()` | Creates the next daily or weekly task when a task is completed. |
 
 ## 📸 Demo Walkthrough
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Open the PawPal+ app in Streamlit.
+2. Enter the owner name, pet name, and species.
+3. Enter a task title, time, duration, priority, and frequency.
+4. Select Add task to add the task to the pet.
+5. View the time-sorted task list.
+6. Enter available minutes and select Generate schedule.
+7. View the daily plan and any conflict warnings.
 
-**Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->
+**Screenshot or video** *(optional)*: Not included.
