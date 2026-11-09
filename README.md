@@ -95,4 +95,4 @@ Describe your app in numbered steps so a reader can follow along without watchin
 - Enter available minutes and select Generate schedule.
 - View the daily plan and any conflict warnings.
 
-- **Screenshot or video** *(optional)*: Not included.
+- **S
