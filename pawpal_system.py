@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field, replace
+from dataclasses import dataclass, field
 from datetime import date, timedelta
 
 
@@ -21,10 +21,14 @@ class Task:
         days = {"daily": 1, "weekly": 7}
         if self.frequency not in days:
             return None
-        return replace(
-            self,
-            completed=False,
-            due_date=self.due_date + timedelta(days=days[self.frequency]),
+        return Task(
+            self.title,
+            self.time,
+            self.duration_minutes,
+            self.priority,
+            self.frequency,
+            False,
+            self.due_date + timedelta(days=days[self.frequency]),
         )
 
 

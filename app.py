@@ -56,6 +56,37 @@ if tasks:
 else:
     st.info("No tasks yet. Add one above.")
 
+if tasks:
+    st.subheader("Edit Task")
+    selected_task = st.selectbox(
+        "Choose a task",
+        tasks,
+        format_func=lambda item: f"{item[0].name} - {item[1].title} at {item[1].time}",
+    )
+    pet, task = selected_task
+    with st.form("edit_task"):
+        edited_title = st.text_input("Task title", value=task.title, key="edit_title")
+        edited_time = st.text_input("Time", value=task.time, key="edit_time")
+        edited_duration = st.number_input(
+            "Duration (minutes)", min_value=1, max_value=240,
+            value=task.duration_minutes, key="edit_duration"
+        )
+        edited_priority = st.selectbox(
+            "Priority", ["low", "medium", "high"],
+            index=["low", "medium", "high"].index(task.priority), key="edit_priority"
+        )
+        edited_frequency = st.selectbox(
+            "Frequency", ["once", "daily", "weekly"],
+            index=["once", "daily", "weekly"].index(task.frequency), key="edit_frequency"
+        )
+        if st.form_submit_button("Save changes"):
+            task.title = edited_title
+            task.time = edited_time
+            task.duration_minutes = int(edited_duration)
+            task.priority = edited_priority
+            task.frequency = edited_frequency
+            st.success("Task updated.")
+
 st.divider()
 
 st.subheader("Today's Schedule")

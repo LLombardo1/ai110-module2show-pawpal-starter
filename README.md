@@ -73,6 +73,7 @@ tests/test_pawpal.py .....
 ```
 
 - Tests cover task completion, task addition, sorting by time, daily recurrence, and conflict detection.
+- Confidence level: 5/5 because the tests cover the main scheduler features.
 
 ## 📐 Smarter Scheduling
 
@@ -90,6 +91,7 @@ Describe your app in numbered steps so a reader can follow along without watchin
 - Enter a task title, time, duration, priority, and frequency.
 - Select Add task to add the task to the pet.
 - View the time-sorted task list.
+- Choose a task and update its details in the Edit Task section.
 - Enter available minutes and select Generate schedule.
 - View the daily plan and any conflict warnings.
 
